@@ -1,0 +1,23 @@
+package com.example.simpletodo.view.layout.footer
+
+
+import de.tschuehly.spring.viewcomponent.core.ViewComponent
+import de.tschuehly.spring.viewcomponent.core.toProperty
+import de.tschuehly.spring.viewcomponent.jte.ViewContext
+
+@ViewComponent
+class FooterViewComponent(
+
+)  {
+
+    fun render(): ViewContext {
+
+        return ViewContext(
+            "githubUrl" toProperty "https://github.com/stella6767",
+            "creator" toProperty "alsrb9434@gmail.com",
+            "creatorEmail" toProperty "Stella6767",
+
+        )
+
+    }
+}

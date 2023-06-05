@@ -30,7 +30,6 @@ class TodoListViewComponent {
 
         return ViewContext(
             "todos" toProperty todos,
-            "hello" toProperty "hi todos",
         )
     }
 

@@ -35,11 +35,9 @@ configurations {
 jte {
     //sourceDirectory.set("src/main/kotlin")
     sourceDirectory.set(Path.of("src","main","kotlin"))
-    precompile()
-    generate()
-
+    //precompile()
+    //generate()
 }
-
 
 
 repositories {
@@ -56,7 +54,7 @@ dependencies {
     implementation("gg.jte:jte-spring-boot-starter-3:$jteVersion")
     // jte-kotlin is needed to compile kte templates
     implementation("gg.jte:jte-kotlin:$jteVersion")
-    implementation("de.tschuehly:spring-view-component-jte:0.5.3")
+    implementation("de.tschuehly:spring-view-component-jte:0.5.4")
 
 
     implementation("org.springframework.boot:spring-boot-starter-aop")
@@ -88,12 +86,12 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-tasks.withType<Jar>{
-    val resourcesDir = sourceSets.main.get().output.resourcesDir
-    println("resourcesDir = $resourcesDir")
-
-    from(resourcesDir)
-}
+//tasks.withType<Jar>{
+//    val resourcesDir = sourceSets.main.get().output.resourcesDir
+//    //println("resourcesDir = $resourcesDir")
+//
+//    from(resourcesDir)
+//}
 
 sourceSets {
     test {

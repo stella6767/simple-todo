@@ -1,0 +1,12 @@
+
+
+@import com.example.simpletodo.entity.Todo
+
+@param todos:List<Todo>
+
+
+@for(todo in todos)
+    <li>${todo.desc}</li>
+@endfor
+
+

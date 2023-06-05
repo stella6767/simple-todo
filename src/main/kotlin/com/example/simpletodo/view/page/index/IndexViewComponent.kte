@@ -1,6 +1,12 @@
 
 
-@param helloWorld:String
+@import com.example.simpletodo.view.layout.footer.FooterViewComponent
 
+@param helloWorld:String
+@param footer: FooterViewComponent
 
 <div>${helloWorld}</div>
+
+
+${footerViewComponent}
+

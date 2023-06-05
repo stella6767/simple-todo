@@ -21,5 +21,10 @@ class TodoController(
     }
 
 
+    @GetMapping("/todos")
+    fun todos(): ViewContext {
+        return todoListViewComponent.render()
+    }
+
 
 }
