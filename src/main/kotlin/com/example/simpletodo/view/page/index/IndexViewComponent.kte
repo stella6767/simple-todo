@@ -1,6 +1,6 @@
 
 
-@param String helloWorld
+@param helloWorld:String
 
 
 <div>${helloWorld}</div>

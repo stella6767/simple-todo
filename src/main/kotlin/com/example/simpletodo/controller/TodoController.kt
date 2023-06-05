@@ -13,7 +13,7 @@ class TodoController(
 ) {
 
     @GetMapping("/")
-    fun todos(): ViewContext {
+    fun index(): ViewContext {
 
         println("????")
 

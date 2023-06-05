@@ -1,12 +1,17 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.nio.file.Path
 
 plugins {
     id("org.springframework.boot") version "3.1.0"
     id("io.spring.dependency-management") version "1.1.0"
+    id("gg.jte.gradle") version "2.3.2"
+
     kotlin("jvm") version "1.8.21"
     kotlin("plugin.spring") version "1.8.21"
     kotlin("plugin.jpa") version "1.8.21"
 }
+
+val jteVersion = "2.3.2"
 
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
@@ -17,6 +22,25 @@ configurations {
         extendsFrom(configurations.annotationProcessor.get())
     }
 }
+
+
+//jte {
+//    precompile()
+//}
+
+//jte {
+//    generate()
+//}
+
+jte {
+    //sourceDirectory.set("src/main/kotlin")
+    sourceDirectory.set(Path.of("src","main","kotlin"))
+    precompile()
+    generate()
+
+}
+
+
 
 repositories {
     mavenCentral()
@@ -29,7 +53,6 @@ dependencies {
     implementation("org.webjars.npm:htmx.org:1.8.4")
 
 
-    var jteVersion = "2.3.2"
     implementation("gg.jte:jte-spring-boot-starter-3:$jteVersion")
     // jte-kotlin is needed to compile kte templates
     implementation("gg.jte:jte-kotlin:$jteVersion")
@@ -66,10 +89,19 @@ tasks.withType<Test> {
 }
 
 tasks.withType<Jar>{
-    from(sourceSets.main.get().output.resourcesDir)
+    val resourcesDir = sourceSets.main.get().output.resourcesDir
+    println("resourcesDir = $resourcesDir")
+
+    from(resourcesDir)
 }
 
 sourceSets {
+    test {
+        resources {
+            srcDir("src/test/kotlin")
+            exclude("**/*.kt")
+        }
+    }
     main {
         resources {
             srcDir("src/main/kotlin")
