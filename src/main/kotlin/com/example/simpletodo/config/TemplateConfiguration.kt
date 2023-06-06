@@ -23,7 +23,6 @@ import java.nio.file.FileSystems
 import java.nio.file.Path
 import java.nio.file.Paths
 
-
 @Configuration
 class TemplateConfiguration {
 
@@ -31,14 +30,19 @@ class TemplateConfiguration {
     private val profile: String? = null
 
     @Bean
-    fun jteViewResolver(templateEngine: TemplateEngine): ViewResolver {
+    fun jteViewResolver(templateEngine: TemplateEngine): JteViewResolver {
 
-        return JteViewResolver(templateEngine)
+        //.kte 아직 불완전..
+
+        return JteViewResolver(templateEngine, ".jte").apply {
+            //this.setSuffix(".kte")
+        }
     }
 
 
+
     @Bean
-    fun templateEngine(): TemplateEngine {
+    fun templateEngine(jteProperties: JteProperties): TemplateEngine {
 
         //val profile = System.getProperty("spring.profiles.active")
 
@@ -51,16 +55,9 @@ class TemplateConfiguration {
             TemplateEngine.createPrecompiled(ContentType.Html)
         } else {
 
-//            val split = jteProperties.templateLocation.split("/".toRegex()).dropLastWhile { it.isEmpty() }
-//                .toTypedArray()
-//
-//            val codeResolver: CodeResolver = DirectoryCodeResolver(FileSystems.getDefault().getPath("", *split))
-
-//            val targetDirectory: Path = Path.of("jte-classes")
-//            TemplateEngine.createPrecompiled(targetDirectory, ContentType.Html);
-
-            var codeResolver = DirectoryCodeResolver(Path.of("src", "main", "kotlin"));
-
+            val split = jteProperties.templateLocation.split("/".toRegex()).dropLastWhile { it.isEmpty() }
+                .toTypedArray()
+            val codeResolver: CodeResolver = DirectoryCodeResolver(FileSystems.getDefault().getPath("", *split))
 
             val templateEngine =
                 TemplateEngine.create(codeResolver, Paths.get("jte-classes"), ContentType.Html, javaClass.classLoader)

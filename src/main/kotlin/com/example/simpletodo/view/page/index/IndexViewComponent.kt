@@ -14,7 +14,7 @@ class IndexViewComponent(
     fun render(): ViewContext {
         return ViewContext(
             "helloWorld" toProperty "stella6767",
-            "footerViewComponent" toProperty footerViewComponent.render()
+            "footerViewComponent" toProperty footerViewComponent
         )
     }
 

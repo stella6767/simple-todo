@@ -24,19 +24,12 @@ configurations {
 }
 
 
-//jte {
-//    precompile()
-//}
-
-//jte {
-//    generate()
-//}
 
 jte {
     //sourceDirectory.set("src/main/kotlin")
     sourceDirectory.set(Path.of("src","main","kotlin"))
     //precompile()
-    //generate()
+    generate()
 }
 
 
@@ -86,12 +79,7 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-//tasks.withType<Jar>{
-//    val resourcesDir = sourceSets.main.get().output.resourcesDir
-//    //println("resourcesDir = $resourcesDir")
-//
-//    from(resourcesDir)
-//}
+
 
 sourceSets {
     test {
