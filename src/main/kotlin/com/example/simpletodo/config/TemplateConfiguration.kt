@@ -21,7 +21,7 @@ class TemplateConfiguration {
     fun jteViewResolver(templateEngine: TemplateEngine): JteViewResolver {
         //.kte 아직 불완전..
         return JteViewResolver(templateEngine, ".jte").apply {
-            this.setSuffix(".kte")
+            //this.setSuffix(".kte")
         }
     }
 

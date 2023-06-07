@@ -19,17 +19,18 @@ class TodoController(
 
     @GetMapping("/")
     fun index(): ViewContext {
-
         log.info("index")
-
         return layoutViewComponent.render(indexViewComponent.render())
     }
 
 
     @GetMapping("/todos")
     fun todos(): ViewContext {
-        return todoListViewComponent.render()
+
+        return layoutViewComponent.render(todoListViewComponent.render())
     }
+
+
 
 
 }

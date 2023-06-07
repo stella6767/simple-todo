@@ -14,8 +14,8 @@ class FooterViewComponent(
 
         return ViewContext(
             "githubUrl" toProperty "https://github.com/stella6767",
-            "creator" toProperty "alsrb9434@gmail.com",
-            "creatorEmail" toProperty "Stella6767",
+            "creator" toProperty "Stella6767",
+            "creatorEmail" toProperty "alsrb9434@gmail.com",
         )
 
     }
