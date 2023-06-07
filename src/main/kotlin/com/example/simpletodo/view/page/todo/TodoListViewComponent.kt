@@ -1,4 +1,4 @@
-package com.example.simpletodo.view.page
+package com.example.simpletodo.view.page.todo
 
 import com.example.simpletodo.entity.Todo
 import com.example.simpletodo.util.logger

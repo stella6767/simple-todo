@@ -47,7 +47,7 @@ dependencies {
     implementation("gg.jte:jte-spring-boot-starter-3:$jteVersion")
     // jte-kotlin is needed to compile kte templates
     implementation("gg.jte:jte-kotlin:$jteVersion")
-    implementation("de.tschuehly:spring-view-component-jte:0.5.4")
+    implementation("de.tschuehly:spring-view-component-jte:0.5.5-RC1")
 
 
     implementation("org.springframework.boot:spring-boot-starter-aop")

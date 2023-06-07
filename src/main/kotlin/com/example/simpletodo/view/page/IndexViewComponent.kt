@@ -1,4 +1,4 @@
-package com.example.simpletodo.view.page.index
+package com.example.simpletodo.view.page
 
 import com.example.simpletodo.view.layout.footer.FooterViewComponent
 import de.tschuehly.spring.viewcomponent.core.ViewComponent
@@ -14,7 +14,7 @@ class IndexViewComponent(
     fun render(): ViewContext {
         return ViewContext(
             "helloWorld" toProperty "stella6767",
-            "footerViewComponent" toProperty footerViewComponent
+            "footer" toProperty footerViewComponent.render()
         )
     }
 
