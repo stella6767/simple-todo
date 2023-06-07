@@ -1,74 +1,36 @@
-<%--<!DOCTYPE html>--%>
-<%--<html>--%>
-<%--<head>--%>
-<%--    <meta charset="UTF-8">--%>
-<%--    <title>Blog</title>--%>
-<%--    <meta name="viewport" content="width=device-width, initial-scale=1">--%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">--%>
-
-
 <%--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>--%>
-
-<%--    <!-- include summernote css/js -->--%>
+    <!-- include summernote css/js -->
 <%--    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">--%>
 <%--    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>--%>
 
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<%--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" crossorigin="anonymous">--%>
-<%--    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>--%>
-<%--</head>--%>
-<%--<body>--%>
-<%--<nav class="navbar navbar-expand-md bg-dark navbar-dark">--%>
-<%--    <!-- Brand -->--%>
-<%--    <a class="navbar-brand" href="/">SpringBoot Simple Blog</a>--%>
-
-<%--    <!-- Toggler/collapsibe Button -->--%>
-<%--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">--%>
-<%--        <span class="navbar-toggler-icon"></span>--%>
-<%--    </button>--%>
-
-<%--    <div class="collapse navbar-collapse" id="collapsibleNavbar">--%>
-<%--        <ul class="navbar-nav">--%>
-<%--            <li class="nav-item"><a class="nav-link" href="/loginForm">로그인</a></li>--%>
-<%--            <li class="nav-item"><a class="nav-link" href="/joinForm">회원가입</a></li>--%>
-<%--            <li class="nav-item"><a class="nav-link" href="/profile">주인정보</a></li>--%>
-<%--        </ul>--%>
-<%--    </div>--%>
-<%--    <form class="form-inline" action="/post/search" method="GET">--%>
-<%--        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="keyword">--%>
-<%--        <button class="btn btn-success" type="submit">Search</button>--%>
-<%--    </form>--%>
-
-<%--    <div class="collapse navbar-collapse" id="collapsibleNavbar">--%>
-<%--        <ul class="navbar-nav">--%>
-<%--            <li class="nav-item"><a class="nav-link" href="/post/saveForm">글쓰기</a></li>--%>
-<%--            <li class="nav-item"><a class="nav-link" href="/admin/user">회원관리</a></li>--%>
-<%--            <li class="nav-item"><a class="nav-link" href="/admin/post">게시글관리</a></li>--%>
-<%--            <li class="nav-item"><a class="nav-link" href="/admin/reply">댓글관리</a></li>--%>
-<%--            <li class="nav-item"><a class="nav-link" href="/profile">주인정보</a></li>--%>
-<%--            <li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>--%>
-<%--        </ul>--%>
-<%--    </div>--%>
-<%--    <form class="form-inline" action="/post/search" method="GET">--%>
-<%--        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="keyword">--%>
-<%--        <button class="btn btn-success" type="submit">Search</button>--%>
-<%--    </form>--%>
-
-
-<%--    <div class="collapse navbar-collapse" id="collapsibleNavbar">--%>
-<%--        <ul class="navbar-nav">--%>
-<%--            <li class="nav-item"><a class="nav-link" href="/post/saveForm">글쓰기</a></li>--%>
-<%--            <li class="nav-item"><a class="nav-link" href="/user/${principal.user.id}">회원정보보기</a></li>--%>
-<%--            <li class="nav-item"><a class="nav-link" href="/profile">주인정보</a></li>--%>
-<%--            <li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>--%>
-<%--        </ul>--%>
-<%--    </div>--%>
-<%--    <form class="form-inline" action="/post/search" method="GET">--%>
-<%--        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="keyword">--%>
-<%--        <button class="btn btn-success" type="submit">Search</button>--%>
-<%--    </form>--%>
-
-
-<%--</nav>--%>
-
-<%--<br/>--%>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+</head>
+<body>
+<div class="navbar bg-base-100">
+    <div class="flex-none">
+        <button class="btn btn-square btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </div>
+    <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl">daisyUI + HTMX + SpringBoot + JTE Example</a>
+    </div>
+    <div class="flex-none">
+        <button class="btn btn-square btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path></svg>
+        </button>
+    </div>
+</div>
+<br/>

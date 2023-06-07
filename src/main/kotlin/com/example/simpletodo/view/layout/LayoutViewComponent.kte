@@ -1,0 +1,11 @@
+@import de.tschuehly.spring.viewcomponent.jte.ViewContext
+
+@param footer:ViewContext
+@param header:ViewContext
+@param nestedView:ViewContext
+
+${header}
+
+${nestedView}
+
+${footer}

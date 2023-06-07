@@ -1,5 +1,6 @@
 package com.example.simpletodo.view.page
 
+import com.example.simpletodo.view.layout.LayoutViewComponent
 import com.example.simpletodo.view.layout.footer.FooterViewComponent
 import de.tschuehly.spring.viewcomponent.core.ViewComponent
 import de.tschuehly.spring.viewcomponent.core.toProperty
@@ -8,14 +9,15 @@ import gg.jte.springframework.boot.autoconfigure.JteView
 
 @ViewComponent
 class IndexViewComponent(
-    private val footerViewComponent: FooterViewComponent
+    private val layoutViewComponent: LayoutViewComponent,
 ) {
 
     fun render(): ViewContext {
+
         return ViewContext(
-            "helloWorld" toProperty "stella6767",
-            "footer" toProperty footerViewComponent.render()
+            "hello" toProperty "is it JTE Worth?",
         )
+
     }
 
 }

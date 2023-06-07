@@ -1,13 +1,16 @@
 @import com.example.simpletodo.view.layout.footer.FooterViewComponent
 @import de.tschuehly.spring.viewcomponent.jte.ViewContext
 
-@param helloWorld:String
-@param footer:ViewContext
-
-<div>${helloWorld}</div>
+@param hello:String
 
 
-${footer}
+
+<div>
+    <h1>${hello}</h1>
+</div>
+
+
+
 
 
 
