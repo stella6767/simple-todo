@@ -46,7 +46,6 @@
     </div>
 
 
-
 </div>
 
 <div class="flex justify-center">
@@ -54,7 +53,14 @@
     <div class="join ">
 
         
-            <button class="join-item btn">«</button>
+        
+        
+
+        
+            <button class="join-item btn" disabled>&lt;</button>
+        
+            <button class="join-item btn"
+                    onclick="location.href='/todos?page='" >&lt;</button>
         
 
 
@@ -76,21 +82,18 @@
                 />
 
             
+
+        
+
+        
+            <button class="join-item btn" disabled>뒤로가기</button>
+        
+            <button class="join-item btn"
+                    onclick="location.href='/todos?page='"
+            >&gt;</button>
         
 
 
-
-
-
-
-
-
-
-
-
-
-
-        <button class="join-item btn">»</button>
     </div>
 
 </div>

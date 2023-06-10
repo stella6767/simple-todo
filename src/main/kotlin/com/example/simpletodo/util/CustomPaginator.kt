@@ -28,6 +28,7 @@ class CustomPaginator(
         currentPageNum: Int,
         isFixed: Boolean
     ): Map<String, Any?>? {
+
         check(!(pagesPerBlock!! % 2 == 0 && !isFixed)) { "getElasticBlock: pagesPerBlock은 홀수만 가능합니다." }
         check(!(currentPageNum > totalLastPageNum!! && totalPostCount != 0L)) { "currentPage가 총 페이지 개수($totalLastPageNum) 보다 큽니다." }
 

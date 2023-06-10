@@ -53,26 +53,32 @@
     </div>
 
 
-
 </div>
 
 <div class="flex justify-center">
 
     <div class="join ">
 
-        @if(!todos.isFirst())
-            <button class="join-item btn">«</button>
+        !{var maxPage = 5;}
+        !{var start =  Math.floor (todos.getNumber() / maxPage) * maxPage + 1;}
+        !{var end = (start + maxPage -1 ) < todos.getTotalPages() ? start + maxPage -1 : todos.getTotalPages(); }
+
+        @if(todos.isFirst() )
+            <button class="join-item btn" disabled>&lt;</button>
+        @else
+            <button class="join-item btn"
+                    onclick="location.href='/todos?page=${todos.getNumber()-1}'" >&lt;</button>
         @endif
 
 
-        @for(int i = (Integer) pageInfo.get("blockFirstPageNum") ; i <= (Integer) pageInfo.get("blockLastPageNum"); ++i)
+        @for(int i = (int) start; i <= end;  i++ )
 
-            @if((Integer)pageInfo.get("currentPageNum") == i)
+            @if( i == (todos.getNumber() + 1))
                 <input class="join-item btn btn-square"
                        type="radio"
                        name="options"
                        aria-label="${i}"
-                       onclick="window.location.href='/todos?page=${i}'"
+                       onclick="window.location.href='/todos?page=${i -1}'"
                        checked
                 />
 
@@ -81,25 +87,22 @@
                        type="radio"
                        name="options"
                        aria-label="${i}"
-                       onclick="window.location.href='/todos?page=${i}'"
+                       onclick="window.location.href='/todos?page=${i - 1}'"
                 />
 
             @endif
+
         @endfor
 
-<%--        <input class="join-item btn btn-square"--%>
-<%--               type="radio"--%>
-<%--               name="options"--%>
-<%--               aria-label="1"--%>
+        @if(todos.isLast() )
+            <button class="join-item btn" disabled>뒤로가기</button>
+        @else
+            <button class="join-item btn"
+                    onclick="location.href='/todos?page=${todos.getNumber()+1}'"
+            >&gt;</button>
+        @endif
 
-<%--               checked />--%>
-<%--        <input class="join-item btn btn-square" type="radio" name="options" aria-label="2"--%>
-<%--               onclick="window.location.href='/todos?page=2'"--%>
-<%--        />--%>
-<%--        <input class="join-item btn btn-square" type="radio" name="options" aria-label="3" />--%>
-<%--        <input class="join-item btn btn-square" type="radio" name="options" aria-label="4" />--%>
 
-        <button class="join-item btn">»</button>
     </div>
 
 </div>
