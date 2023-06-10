@@ -21,7 +21,7 @@ class Todo(
     var content = content
 
     @Column
-    val status: Boolean = status
+    var status: Boolean = status
 
 
 }

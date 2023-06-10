@@ -9,3 +9,7 @@ data class TodoResDto(
     val status: Boolean,
     val createdAt: LocalDateTime,
 )
+
+data class StatusDto(
+    val status: Boolean,
+)

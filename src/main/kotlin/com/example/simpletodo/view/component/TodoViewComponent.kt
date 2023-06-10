@@ -11,7 +11,7 @@ class TodoViewComponent(
 
 ) {
 
-    fun render(todo: Todo): ViewContext {
+    fun render(todo: Todo?): ViewContext {
 
         return ViewContext(
             "todo" toProperty todo,

@@ -1,9 +1,11 @@
 @import com.example.simpletodo.entity.Todo
-
+@import com.example.simpletodo.view.component.TodoViewComponent
+@import de.tschuehly.spring.viewcomponent.jte.ViewContext
 @import org.springframework.data.domain.Page
 @import java.util.*
 
 @param Page<Todo> todos
+@param TodoViewComponent todoViewComponent
 
 
 
@@ -35,19 +37,8 @@
 
         <div id="todo-list">
 
-
-
             @for(Todo todo : todos)
-                <div class="flex mb-4 items-center" id="todo-box">
-
-                    <p class="w-full text-grey-darkest">${todo.getContent()}</p>
-                    <button class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green border-green hover:bg-green">
-                        Done
-                    </button>
-                    <button class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red">
-                        Remove
-                    </button>
-                </div>
+                ${todoViewComponent.render(todo)}
             @endfor
         </div>
     </div>
