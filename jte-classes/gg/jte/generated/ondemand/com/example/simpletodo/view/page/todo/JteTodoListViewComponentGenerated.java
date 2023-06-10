@@ -1,12 +1,11 @@
 package gg.jte.generated.ondemand.com.example.simpletodo.view.page.todo;
 import com.example.simpletodo.entity.Todo;
-import com.example.simpletodo.util.CustomPaginator;
 import org.springframework.data.domain.Page;
 import java.util.*;
 public final class JteTodoListViewComponentGenerated {
 	public static final String JTE_NAME = "com/example/simpletodo/view/page/todo/TodoListViewComponent.jte";
-	public static final int[] JTE_LINE_INFO = {0,0,1,2,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,39,39,39,42,42,42,50,50,61,61,62,62,63,63,65,65,67,67,69,69,69,69,70,70,73,73,75,75,79,79,79,79,79,79,79,79,80,80,80,80,84,84,88,88,88,88,88,88,88,88,89,89,89,89,92,92,94,94,96,96,98,98,100,100,100,100,102,102,109};
-	private static final gg.jte.runtime.BinaryContent BINARY_CONTENT = gg.jte.runtime.BinaryContent.load(JteTodoListViewComponentGenerated.class, "JteTodoListViewComponentGenerated.bin", 1103,125,427,105,9,9,10,74,99,26,11,14,130,13,1,67,66,130,13,1,67,35,10,10,82,99,38,23);
+	public static final int[] JTE_LINE_INFO = {0,0,2,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,39,39,39,42,42,42,50,50,61,61,62,62,63,63,68,68,70,70,72,72,72,72,73,73,76,76,78,78,82,82,82,82,82,82,82,82,83,83,83,83,87,87,91,91,91,91,91,91,91,91,92,92,92,92,95,95,97,97,99,99,101,101,103,103,103,103,105,105,108,108,108,108,114};
+	private static final gg.jte.runtime.BinaryContent BINARY_CONTENT = gg.jte.runtime.BinaryContent.load(JteTodoListViewComponentGenerated.class, "JteTodoListViewComponentGenerated.bin", 1104,125,427,105,9,9,105,74,99,26,11,14,130,13,1,67,66,130,13,1,67,35,10,10,74,99,38,92,39);
 	private static final byte[] TEXT_PART_BINARY_0 = BINARY_CONTENT.get(0);
 	private static final byte[] TEXT_PART_BINARY_1 = BINARY_CONTENT.get(1);
 	private static final byte[] TEXT_PART_BINARY_2 = BINARY_CONTENT.get(2);
@@ -35,7 +34,8 @@ public final class JteTodoListViewComponentGenerated {
 	private static final byte[] TEXT_PART_BINARY_25 = BINARY_CONTENT.get(25);
 	private static final byte[] TEXT_PART_BINARY_26 = BINARY_CONTENT.get(26);
 	private static final byte[] TEXT_PART_BINARY_27 = BINARY_CONTENT.get(27);
-	public static void render(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, Page<Todo> todos, Map<String, Object> pageInfo) {
+	private static final byte[] TEXT_PART_BINARY_28 = BINARY_CONTENT.get(28);
+	public static void render(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, Page<Todo> todos) {
 		jteOutput.writeBinaryContent(TEXT_PART_BINARY_0);
 		for (Todo todo : todos) {
 			jteOutput.writeBinaryContent(TEXT_PART_BINARY_1);
@@ -104,10 +104,13 @@ public final class JteTodoListViewComponentGenerated {
 			jteOutput.writeBinaryContent(TEXT_PART_BINARY_26);
 		}
 		jteOutput.writeBinaryContent(TEXT_PART_BINARY_27);
+		jteOutput.setContext("button", "onclick");
+		jteOutput.writeUserContent(todos.getTotalPages() -1);
+			jteOutput.setContext("button", null);
+		jteOutput.writeBinaryContent(TEXT_PART_BINARY_28);
 	}
 	public static void renderMap(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, java.util.Map<String, Object> params) {
 		Page<Todo> todos = (Page<Todo>)params.get("todos");
-		Map<String, Object> pageInfo = (Map<String, Object>)params.get("pageInfo");
-		render(jteOutput, jteHtmlInterceptor, todos, pageInfo);
+		render(jteOutput, jteHtmlInterceptor, todos);
 	}
 }

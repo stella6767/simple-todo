@@ -1,5 +1,6 @@
 
 
+
 <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
     <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
         <div class="mb-4">
@@ -56,6 +57,9 @@
         
         
 
+        <button class="join-item btn" onclick="location.href='/todos?page=0'">First</button>
+
+
         
             <button class="join-item btn" disabled>&lt;</button>
         
@@ -86,13 +90,15 @@
         
 
         
-            <button class="join-item btn" disabled>뒤로가기</button>
+            <button class="join-item btn" disabled>&gt;</button>
         
             <button class="join-item btn"
                     onclick="location.href='/todos?page='"
             >&gt;</button>
         
 
+        <button class="join-item btn"
+                onclick="location.href='/todos?page='" >Last</button>
 
     </div>
 
