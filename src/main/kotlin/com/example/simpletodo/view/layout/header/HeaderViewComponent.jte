@@ -10,6 +10,10 @@
     <!-- include summernote css/js -->
 <%--    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">--%>
 <%--    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>--%>
+<%--    <script type="text/javascript" src="@{/webjars/htmx.org/dist/htmx.min.js}"></script>--%>
+
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.3/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,7 +21,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
 
 </head>
 <body>

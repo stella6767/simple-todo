@@ -1,4 +1,8 @@
 package com.example.simpletodo.repository
 
-class TodoRepository {
+import com.example.simpletodo.entity.Todo
+import org.springframework.data.jpa.repository.JpaRepository
+
+interface TodoRepository : JpaRepository<Todo, Long>, TodoCustomRepository {
+
 }

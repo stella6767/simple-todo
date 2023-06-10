@@ -1,35 +1,38 @@
 package com.example.simpletodo.view.page.todo
 
-import com.example.simpletodo.entity.Todo
+import com.example.simpletodo.repository.TodoRepository
+import com.example.simpletodo.util.CustomPaginator
 import com.example.simpletodo.util.logger
 import de.tschuehly.spring.viewcomponent.core.ViewComponent
 import de.tschuehly.spring.viewcomponent.core.toProperty
 import de.tschuehly.spring.viewcomponent.jte.ViewContext
+import org.springframework.data.domain.Pageable
 
 @ViewComponent
-class TodoListViewComponent {
+class TodoListViewComponent(
+    private val todoRepository: TodoRepository,
+) {
 
     val log = logger()
 
 
-    fun render(): ViewContext {
+    fun render(pageable: Pageable): ViewContext {
 
-        val todo1 = Todo(
-            1, "title", true
-        )
+        val todos =
+            todoRepository.findTodos(pageable)
 
-        val todo2 = Todo(
-            2, "title2", true
-        )
+        val paginator =
+            CustomPaginator(5, pageable.pageSize, todos.totalElements)
 
-        val todo3 = Todo(
-            3, "title3", true
-        )
+        val pageInfo =
+            paginator.getFixedBlock(pageable.pageNumber)
 
-        val todos = listOf(todo1, todo2, todo3)
+        println(pageInfo)
+
 
         return ViewContext(
             "todos" toProperty todos,
+            "pageInfo" toProperty pageInfo,
         )
     }
 
