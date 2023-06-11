@@ -20,13 +20,13 @@ class LoggerAspect(
 
     private val log = logger()
 
-
+    // this aspect cause oauth2
 
     @Pointcut("execution(* com.example.simpletodo.*..*Controller.*(..))")
     private fun controllerCut() = Unit
 
 
-    @Pointcut("bean(*Service)")
+    @Pointcut("execution(* com.example.simpletodo.service.*Service.*(..))")
     private fun serviceCut() = Unit
 
     @Before("serviceCut()")

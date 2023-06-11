@@ -12,27 +12,6 @@ server:
         - local
 
 spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: 393821140540-highuqfdo7plfhsnj6f7eh8mguq6jnep.apps.googleusercontent.com
-            client-secret: XihnDdodsv0EB5ItIkuU2Exs
-            scope:
-              - email
-              - profile
-          facebook:
-            client-id: 1021687088359164
-            client-secret: 49ea8def873417930f3bd6fd424563c2
-            scope:
-              - email
-              - public_profile
-
-
-
-
-
   h2:
     console:
       enabled: true

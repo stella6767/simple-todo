@@ -30,8 +30,8 @@ class OAuth2DetailsService(
         val oAuth2User =
             super.loadUser(userRequest)
 
-        log.debug("""           
-            ${oAuth2User.attributes}            
+        log.debug("""
+            ${oAuth2User.attributes}
         """.trimIndent())
 
         return processOAuth2User(userRequest, oAuth2User)

@@ -44,7 +44,6 @@ allOpen {
     annotation("jakarta.persistence.MappedSuperclass")
     annotation("jakarta.persistence.Embeddable")
 
-
 //    annotation("javax.persistence.Entity")
 //    annotation("javax.persistence.Embeddable")
 //    annotation("javax.persistence.MappedSuperclass")
@@ -105,7 +104,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
 
-    //implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3")

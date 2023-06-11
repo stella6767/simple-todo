@@ -1,5 +1,6 @@
 package com.example.simpletodo.entity
 
+
 import com.example.simpletodo.config.security.OAuth2UserInfo
 import com.example.simpletodo.entity.type.SignType
 import jakarta.persistence.*
