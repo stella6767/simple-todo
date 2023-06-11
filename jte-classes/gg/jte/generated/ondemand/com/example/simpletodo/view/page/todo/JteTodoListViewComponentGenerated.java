@@ -6,8 +6,8 @@ import org.springframework.data.domain.Page;
 import java.util.*;
 public final class JteTodoListViewComponentGenerated {
 	public static final String JTE_NAME = "com/example/simpletodo/view/page/todo/TodoListViewComponent.jte";
-	public static final int[] JTE_LINE_INFO = {0,0,1,2,3,4,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,39,39,39,40,40,40,41,41,52,52,53,53,54,54,59,59,61,61,63,63,63,63,64,64,67,67,69,69,73,73,73,73,73,73,73,73,74,74,74,74,78,78,82,82,82,82,82,82,82,82,83,83,83,83,86,86,88,88,90,90,92,92,94,94,94,94,96,96,99,99,99,99,105};
-	private static final gg.jte.runtime.BinaryContent BINARY_CONTENT = gg.jte.runtime.BinaryContent.load(JteTodoListViewComponentGenerated.class, "JteTodoListViewComponentGenerated.bin", 1102,17,13,105,9,9,105,74,99,26,11,14,130,13,1,67,66,130,13,1,67,35,10,10,74,99,38,92,39);
+	public static final int[] JTE_LINE_INFO = {0,0,1,2,3,4,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,38,38,38,40,40,40,42,42,53,53,54,54,55,55,60,60,62,62,64,64,64,64,66,66,69,69,71,71,75,75,75,75,75,75,75,75,76,76,76,76,80,80,84,84,84,84,84,84,84,84,85,85,85,85,88,88,90,90,92,92,94,94,96,96,96,96,99,99,102,102,102,102,109};
+	private static final gg.jte.runtime.BinaryContent BINARY_CONTENT = gg.jte.runtime.BinaryContent.load(JteTodoListViewComponentGenerated.class, "JteTodoListViewComponentGenerated.bin", 1094,22,14,105,9,9,105,74,99,38,11,14,130,13,1,67,66,130,13,1,67,35,10,10,74,99,51,92,47);
 	private static final byte[] TEXT_PART_BINARY_0 = BINARY_CONTENT.get(0);
 	private static final byte[] TEXT_PART_BINARY_1 = BINARY_CONTENT.get(1);
 	private static final byte[] TEXT_PART_BINARY_2 = BINARY_CONTENT.get(2);

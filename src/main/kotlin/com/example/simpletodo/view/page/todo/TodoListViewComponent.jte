@@ -8,7 +8,6 @@
 @param TodoViewComponent todoViewComponent
 
 
-
 <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
     <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
         <div class="mb-4">
@@ -20,7 +19,7 @@
                        name="newTodo"
                        placeholder="To do..."
                        required type="text"
-                       >
+                >
                 <button class="flex-no-shrink p-2 border-2 rounded text-teal border-teal hover:text-white hover:bg-teal"
 
                         hx-include="#new-todo"
@@ -38,7 +37,9 @@
         <div id="todo-list">
 
             @for(Todo todo : todos)
-                ${todoViewComponent.render(todo)}
+
+                    ${todoViewComponent.render(todo)}
+
             @endfor
         </div>
     </div>
@@ -61,7 +62,8 @@
             <button class="join-item btn" disabled>&lt;</button>
         @else
             <button class="join-item btn"
-                    onclick="location.href='/todos?page=${todos.getNumber()-1}'" >&lt;</button>
+                    onclick="location.href='/todos?page=${todos.getNumber()-1}'">&lt;
+            </button>
         @endif
 
 
@@ -93,11 +95,13 @@
         @else
             <button class="join-item btn"
                     onclick="location.href='/todos?page=${todos.getNumber()+1}'"
-            >&gt;</button>
+            >&gt;
+            </button>
         @endif
 
         <button class="join-item btn"
-                onclick="location.href='/todos?page=${todos.getTotalPages() -1}'" >Last</button>
+                onclick="location.href='/todos?page=${todos.getTotalPages() -1}'">Last
+        </button>
 
     </div>
 

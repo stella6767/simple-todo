@@ -48,15 +48,15 @@ class TodoController(
 
 
     @PutMapping("/todo/{id}")
-    @ResponseBody
+    //@ResponseBody
     fun updateTodo(@PathVariable id: Long,
                    //@RequestBody status:StatusDto
-    ): String {
+    ): ViewContext {
 
         val todo =
-            todoService.updateStatusTodo(id, true)
+            todoService.updateStatusTodo(id)
 
-        return "Yet"
+        return todoViewComponent.render(todo)
     }
 
     @DeleteMapping("/todo/{id}")

@@ -35,12 +35,12 @@ class TodoService(
     }
 
 
-    fun updateStatusTodo(id: Long, status: Boolean): Todo {
+    fun updateStatusTodo(id: Long): Todo {
 
         val todo =
             todoRepository.findById(id).orElseThrow()
 
-        todo.status = true
+        todo.status = !todo.status
 
         return todo
     }
