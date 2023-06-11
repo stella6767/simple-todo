@@ -1,4 +1,4 @@
-@import com.example.simpletodo.view.layout.footer.FooterViewComponent
+@import com.example.simpletodo.view.page.layout.footer.FooterViewComponent
 @import de.tschuehly.spring.viewcomponent.jte.ViewContext
 
 @param String hello

@@ -1,1 +1,61 @@
 
+server:
+  tomcat:
+    max-swallow-size: 500MB
+  port: 8080
+  # shutdown: "graceful"
+
+
+  config:
+    activate:
+      on-profile:
+        - local
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 393821140540-highuqfdo7plfhsnj6f7eh8mguq6jnep.apps.googleusercontent.com
+            client-secret: XihnDdodsv0EB5ItIkuU2Exs
+            scope:
+              - email
+              - profile
+          facebook:
+            client-id: 1021687088359164
+            client-secret: 49ea8def873417930f3bd6fd424563c2
+            scope:
+              - email
+              - public_profile
+
+
+
+
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/todo
+    username: sa
+    password:
+    hikari:
+      maximum-pool-size: 5
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+    properties:
+      hibernate.default_batch_fetch_size: 1000
+      hibernate:
+        globally_quoted_identifiers: true #DB 예약어도 가능
+
+

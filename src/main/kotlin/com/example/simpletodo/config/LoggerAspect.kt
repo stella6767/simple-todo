@@ -21,10 +21,6 @@ class LoggerAspect(
     private val log = logger()
 
 
-    @PostConstruct
-    fun init(){
-        log.info("init")
-    }
 
     @Pointcut("execution(* com.example.simpletodo.*..*Controller.*(..))")
     private fun controllerCut() = Unit

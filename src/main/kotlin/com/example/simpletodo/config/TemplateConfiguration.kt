@@ -1,5 +1,6 @@
 package com.example.simpletodo.config
 
+import com.example.simpletodo.util.logger
 import gg.jte.CodeResolver
 import gg.jte.ContentType
 import gg.jte.TemplateEngine
@@ -16,6 +17,8 @@ class TemplateConfiguration {
 
     @Value("\${spring.profiles.active:unknown}")
     private val profile: String? = null
+
+    private val log = logger()
 
     @Bean
     fun jteViewResolver(templateEngine: TemplateEngine): JteViewResolver {
@@ -36,7 +39,7 @@ class TemplateConfiguration {
 
         return if ("prod" == profile) {
 
-            println("되나")
+            log.info("preCompiled")
             // Templates will be compiled by the maven build task
             TemplateEngine.createPrecompiled(ContentType.Html)
         } else {

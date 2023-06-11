@@ -4,7 +4,7 @@ import com.example.simpletodo.dto.StatusDto
 import com.example.simpletodo.service.TodoService
 import com.example.simpletodo.util.logger
 import com.example.simpletodo.view.component.TodoViewComponent
-import com.example.simpletodo.view.layout.LayoutViewComponent
+import com.example.simpletodo.view.page.layout.LayoutViewComponent
 import com.example.simpletodo.view.page.todo.TodoListViewComponent
 import com.example.simpletodo.view.page.IndexViewComponent
 import de.tschuehly.spring.viewcomponent.jte.ViewContext

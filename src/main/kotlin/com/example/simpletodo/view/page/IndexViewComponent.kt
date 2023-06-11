@@ -1,7 +1,7 @@
 package com.example.simpletodo.view.page
 
-import com.example.simpletodo.view.layout.LayoutViewComponent
-import com.example.simpletodo.view.layout.footer.FooterViewComponent
+import com.example.simpletodo.view.page.layout.LayoutViewComponent
+import com.example.simpletodo.view.page.layout.footer.FooterViewComponent
 import de.tschuehly.spring.viewcomponent.core.ViewComponent
 import de.tschuehly.spring.viewcomponent.core.toProperty
 import de.tschuehly.spring.viewcomponent.jte.ViewContext

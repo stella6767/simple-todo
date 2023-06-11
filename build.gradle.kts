@@ -43,6 +43,11 @@ allOpen {
     annotation("jakarta.persistence.Entity")
     annotation("jakarta.persistence.MappedSuperclass")
     annotation("jakarta.persistence.Embeddable")
+
+
+//    annotation("javax.persistence.Entity")
+//    annotation("javax.persistence.Embeddable")
+//    annotation("javax.persistence.MappedSuperclass")
 }
 
 sourceSets["main"].withConvention(org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet::class) {
@@ -86,6 +91,10 @@ dependencies {
 //    //kapt(group = "com.querydsl", name = "querydsl-apt", classifier = "jakarta")
 //    kapt("org.springframework.boot:spring-boot-configuration-processor")
 
+// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    implementation("org.apache.commons:commons-lang3:3.12.0")
+
+
     implementation("gg.jte:jte-spring-boot-starter-3:$jteVersion")
     // jte-kotlin is needed to compile kte templates
     implementation("gg.jte:jte-kotlin:$jteVersion")
@@ -96,7 +105,15 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
 
-    implementation("org.springframework.boot:spring-boot-starter-security")
+    //implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
+
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:2.13.3")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+
+
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

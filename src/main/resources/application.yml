@@ -3,18 +3,9 @@ gg:
   jte:
     templateLocation: src/main/kotlin
 
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: *
 
-logging:
-  level:
-    web: debug
 
 server:
-  port: 8080
   servlet:
     context-path: /
     encoding:
@@ -22,30 +13,23 @@ server:
       enabled: true
 
 spring:
+  profiles:
+    active:
+      - local
+  application:
+    name: simple-todo
   view-component:
     local-development: false
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-
-  datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:~/todo
-    username: sa
-    password:
-
-  jpa:
-    open-in-view: false
-    hibernate:
-      ddl-auto: update
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
 
+logging:
+  config: classpath:logback-todo.xml
 
-
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 
 

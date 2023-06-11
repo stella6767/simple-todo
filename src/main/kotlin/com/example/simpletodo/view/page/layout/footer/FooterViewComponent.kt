@@ -1,4 +1,4 @@
-package com.example.simpletodo.view.layout.footer
+package com.example.simpletodo.view.page.layout.footer
 
 
 import de.tschuehly.spring.viewcomponent.core.ViewComponent
