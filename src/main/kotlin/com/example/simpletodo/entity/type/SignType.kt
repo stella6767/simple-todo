@@ -5,9 +5,11 @@ import com.fasterxml.jackson.annotation.JsonCreator
 enum class SignType(
     val clientName: String
 ) {
+    //CommonOAuth2Provider
+
     FACEBOOK("Facebook"),
     GOOGLE("Google"),
-    GITHUB("Github"),
+    GITHUB("GitHub"),
 
     ;
 

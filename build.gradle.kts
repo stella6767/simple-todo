@@ -83,6 +83,9 @@ dependencies {
     implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0")
 
 
+    implementation("com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.5")
+
+
 //    implementation("com.querydsl:querydsl-core:${querydslVersion}")
 //    implementation("com.querydsl:querydsl-jpa:$querydslVersion:jakarta")
 //
@@ -130,6 +133,8 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
 }
+
+
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
