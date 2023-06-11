@@ -25,12 +25,12 @@ class OAuth2DetailsService(
 
     override fun loadUser(userRequest: OAuth2UserRequest): OAuth2User {
 
-        log.debug("OAuth 로그인 진행중................ ${userRequest.accessToken.tokenValue}")
+        log.info("OAuth 로그인 진행중................ ${userRequest.accessToken.tokenValue}")
 
         val oAuth2User =
             super.loadUser(userRequest)
 
-        log.debug("""
+        log.info("""
             ${oAuth2User.attributes}
         """.trimIndent())
 
@@ -44,7 +44,7 @@ class OAuth2DetailsService(
             getOAuth2UserInfo(userRequest.clientRegistration.clientName, oAuth2User)
 
         var userEntity =
-            userRepository.findByEmail(oAuth2UserInfo.getEmail() ?: throw RuntimeException("email not found"))
+            userRepository.findByUsername(oAuth2UserInfo.getUsername())
 
         val uuid =
             UUID.randomUUID()
@@ -60,6 +60,7 @@ class OAuth2DetailsService(
                 User.createInstanceByOauth(oAuth2UserInfo, encPassword, mapper.writeValueAsString(oAuth2UserInfo.attributes))
 
             return UserPrincipal(userRepository.save(newUser))
+
         } else {
             //이미 회원가입이 완료됐다는 뜻(원래는 구글 정보가 변경될 수 있기 떄문에 update 해야되는데 지금은 안하겠음)
             log.info("회원정보가 있습니다. 바로 로그인합니다.")

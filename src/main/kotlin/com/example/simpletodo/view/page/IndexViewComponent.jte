@@ -1,8 +1,10 @@
 @import com.example.simpletodo.view.page.layout.footer.FooterViewComponent
 @import de.tschuehly.spring.viewcomponent.jte.ViewContext
+@import jakarta.servlet.http.HttpSession
+@import org.springframework.security.core.Authentication
 
 @param String hello
-
+@param Authentication authentication 
 
 
 <div>
@@ -13,7 +15,12 @@
             <div class="max-w-md">
                 <h1 class="mb-5 text-5xl font-bold">Hello there <br/> Try This simple Todo App</h1>
                 <p class="mb-5">Provide by stella6767</p>
-                <button class="btn btn-primary" onclick="location.href='/todos'">${hello}</button>
+                @if(!authentication.isAuthenticated())
+                    <button class="btn btn-primary" onclick="location.href='/login/modal'">${hello}</button>
+                @else
+                    <button class="btn btn-primary" onclick="location.href='/todos'">${hello}</button>
+                @endif
+
             </div>
         </div>
     </div>
