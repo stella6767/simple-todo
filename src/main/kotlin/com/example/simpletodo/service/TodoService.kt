@@ -1,5 +1,6 @@
 package com.example.simpletodo.service
 
+import com.example.simpletodo.config.security.UserPrincipal
 import com.example.simpletodo.entity.Todo
 import com.example.simpletodo.repository.TodoRepository
 import com.example.simpletodo.util.logger
@@ -15,9 +16,9 @@ class TodoService(
     val logger = logger()
 
 
-    fun save(todo: String): Todo {
+    fun save(todo: String, principal: UserPrincipal): Todo {
 
-        val newTodo = Todo(content = todo,)
+        val newTodo = Todo(content = todo, user = principal.user)
 
         return todoRepository.save(newTodo)
     }

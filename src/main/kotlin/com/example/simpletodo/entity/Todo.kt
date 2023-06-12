@@ -14,6 +14,7 @@ class Todo(
     id:Long = 0,
     content:String,
     status:Boolean = false,
+    user: User,
 ) : BaseEntity(id = id) {
 
 
@@ -22,6 +23,11 @@ class Todo(
 
     @Column
     var status: Boolean = status
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    val user = user
 
 
 }

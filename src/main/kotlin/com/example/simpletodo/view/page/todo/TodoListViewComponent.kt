@@ -1,5 +1,6 @@
 package com.example.simpletodo.view.page.todo
 
+import com.example.simpletodo.config.security.UserPrincipal
 import com.example.simpletodo.repository.TodoRepository
 import com.example.simpletodo.util.logger
 import com.example.simpletodo.view.component.TodoViewComponent
@@ -17,10 +18,10 @@ class TodoListViewComponent(
     val log = logger()
 
 
-    fun render(pageable: Pageable): ViewContext {
+    fun render(pageable: Pageable, principal: UserPrincipal): ViewContext {
 
         val todos =
-            todoRepository.findTodos(pageable)
+            todoRepository.findTodos(pageable, principal.user)
 
 
         return ViewContext(

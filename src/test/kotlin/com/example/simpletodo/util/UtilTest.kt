@@ -9,15 +9,16 @@ class UtilTest {
     @Test
     fun jasyptTest() {
 
+        val key = "asdasd"
 
-        val gitHubSecret = "asd"
+        val gitHubSecret = "asdasd"
         val googleSecret = "asdasd"
         val facebookSecret = "asdasd"
 
 
-        val encryptGithub = jasyptEncrypt(gitHubSecret)
-        val encryptGoogle = jasyptEncrypt(googleSecret)
-        val encryptFacebook = jasyptEncrypt(facebookSecret)
+        val encryptGithub = jasyptEncrypt(key,gitHubSecret)
+        val encryptGoogle = jasyptEncrypt(key,googleSecret)
+        val encryptFacebook = jasyptEncrypt(key,facebookSecret)
 
 
         System.out.println("encryptGithub : " + encryptGithub)
@@ -27,16 +28,14 @@ class UtilTest {
 
     }
 
-    private fun jasyptEncrypt(input: String): String? {
-        val key = "1234"
+    private fun jasyptEncrypt(key:String, input: String): String? {
         val encryptor = StandardPBEStringEncryptor()
         encryptor.setAlgorithm("PBEWithMD5AndDES")
         encryptor.setPassword(key)
         return encryptor.encrypt(input)
     }
 
-    private fun jasyptDecryt(input: String): String? {
-        val key = "1234"
+    private fun jasyptDecryt(key:String, input: String): String? {
         val encryptor = StandardPBEStringEncryptor()
         encryptor.setAlgorithm("PBEWithMD5AndDES")
         encryptor.setPassword(key)

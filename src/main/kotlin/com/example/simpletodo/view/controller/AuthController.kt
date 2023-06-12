@@ -13,7 +13,6 @@ class AuthController(
 
     @GetMapping("/login/modal")
     fun loginModal(): ViewContext {
-
         return loginModalViewComponent.render()
     }
 

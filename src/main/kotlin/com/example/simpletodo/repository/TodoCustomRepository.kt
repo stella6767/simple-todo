@@ -1,8 +1,8 @@
 package com.example.simpletodo.repository
 
-import com.example.simpletodo.entity.QTodo
 import com.example.simpletodo.entity.QTodo.*
 import com.example.simpletodo.entity.Todo
+import com.example.simpletodo.entity.User
 import com.querydsl.jpa.impl.JPAQueryFactory
 import jakarta.persistence.EntityManager
 import org.springframework.data.domain.Page
@@ -11,7 +11,7 @@ import org.springframework.data.support.PageableExecutionUtils
 
 interface TodoCustomRepository {
 
-    fun findTodos(pageable: Pageable): Page<Todo>
+    fun findTodos(pageable: Pageable, user: User): Page<Todo>
 
 }
 
@@ -23,13 +23,13 @@ class TodoCustomRepositoryImpl(
 ) : TodoCustomRepository {
 
 
-    override fun findTodos(pageable: Pageable): Page<Todo> {
+    override fun findTodos(pageable: Pageable, user: User): Page<Todo> {
 
         val fetch = queryFactory
             .selectFrom(todo)
-//            .where(
-//
-//            )
+            .where(
+                todo.user.eq(user)
+            )
             .offset(pageable.offset)
             .limit(pageable.pageSize.toLong())
             .orderBy(todo.id.desc())
@@ -38,7 +38,9 @@ class TodoCustomRepositoryImpl(
         val countQuery = queryFactory
             .select(todo.count())
             .from(todo)
-            //.where()
+            .where(
+                todo.user.eq(user)
+            )
             .fetchOne() ?: 0
 
 
