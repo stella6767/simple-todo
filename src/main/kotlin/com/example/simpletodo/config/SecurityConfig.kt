@@ -16,6 +16,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer
 import org.springframework.security.core.Authentication
 import org.springframework.security.core.AuthenticationException
+import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.web.AuthenticationEntryPoint
 import org.springframework.security.web.SecurityFilterChain
@@ -44,7 +45,7 @@ class SecurityConfig(
     fun webSecurityCustomizer(): WebSecurityCustomizer {
         return WebSecurityCustomizer { web: WebSecurity ->
             web.ignoring()
-                .requestMatchers("/resources/**")
+                .requestMatchers("/resources/*")
         }
     }
 
@@ -136,10 +137,12 @@ class SecurityConfig(
 
             log.info("logout success")
 
-            authentication?.isAuthenticated = false
+            val context = SecurityContextHolder.getContext()
+            context.authentication = null
+            SecurityContextHolder.clearContext()
+
 
             response.sendRedirect("/")
-
         }
 
     }
@@ -153,8 +156,10 @@ class SecurityConfig(
 //            val userDetails = authentication.principal as UserDetails
 //            val SESSION_TIMEOUT_IN_SECONDS = 60 * 120 //단위는 초, 2시간 간격으로 세션만료
 //            request.session.maxInactiveInterval = SESSION_TIMEOUT_IN_SECONDS //세션만료시간.
+            request.session.maxInactiveInterval = 3600
 
-            authentication.isAuthenticated = true
+            SecurityContextHolder.getContext().authentication = authentication
+
 
             response.sendRedirect("/")
         }
@@ -164,19 +169,19 @@ class SecurityConfig(
     companion object {
 
         val AUTH_PASS_LIST = arrayOf(
-            "/public/**", "/webjars/**", "/", "/logout", "/api/**", "/login", "/h2-console/**",
+            "/public/*", "/webjars/*", "/", "/logout", "/api/**", "/login", "/h2-console/*",
             "/error",
             "/logout",
-            "/login/**",
-            "/oauth2/authorization/**",
+            "/login/*",
+            "/oauth2/authorization/*",
             "/favicon.ico",
-            "/**/*.png",
-            "/**/*.gif",
-            "/**/*.svg",
-            "/**/*.jpg",
-            "/**/*.html",
-            "/**/*.css",
-            "/**/*.js"
+            "/*/*.png",
+            "/*/*.gif",
+            "/*/*.svg",
+            "/*/*.jpg",
+            "/*/*.html",
+            "/*/*.css",
+            "/*/*.js"
 
         )
 

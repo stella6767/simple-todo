@@ -36,8 +36,6 @@ configurations {
 val querydslVersion = "5.0.0"
 
 
-
-
 allOpen {
     // Spring Boot 3.0.0
     annotation("jakarta.persistence.Entity")

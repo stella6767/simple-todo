@@ -10,7 +10,7 @@ import jakarta.persistence.*
 @Table(name = "user")
 class User(
     username: String,
-    email: String,
+    email: String?,
     password: String,
     rawData: String,
     signType: SignType,
@@ -20,7 +20,7 @@ class User(
     @Column(nullable = false)
     val username = username
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = true, length = 100)
     val email = email
 
     @Column(nullable = false, length = 100)
@@ -48,7 +48,7 @@ class User(
 
             return User(
                 username = oAuth2UserInfo.getUsername(),
-                email = oAuth2UserInfo.getEmail()!!,
+                email = oAuth2UserInfo.getEmail(),
                 password = encPassword,
                 rawData = rawData,
                 signType = oAuth2UserInfo.signType

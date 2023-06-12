@@ -34,8 +34,8 @@ class UserPrincipal(
         return user.password
     }
 
-    override fun getUsername(): String {
-        return user.email
+    override fun getUsername(): String? {
+        return user.username
     }
 
     override fun isAccountNonExpired(): Boolean {
@@ -52,6 +52,10 @@ class UserPrincipal(
 
     override fun isEnabled(): Boolean {
         return true
+    }
+
+    override fun toString(): String {
+        return "UserPrincipal(user=$user, customAuthorities=$customAuthorities)"
     }
 
 

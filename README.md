@@ -1,19 +1,54 @@
-https://www.reddit.com/r/djangolearning/comments/zobksf/passing_values_to_views_with_htmx/
 
 
-https://htmx.org/attributes/hx-vals/
+
+# daisyUI + HTMX + SpringBoot + JTE  Todo App
+
+huge inspired by https://www.youtube.com/watch?v=DPAtQU-erM4
+
+I totally agree with people who talk about modern frontend framework(JS) is too heavy and complicated.
+</br>
+I'm tired of JSON and typing multiple same AJAX calls shit.
+</br>
+JAVASCRIPT is a attractive, But i don't' want to get close.
+</br>
+I want restore of Server Side Rendering and MPA.
+
+
+## HTMX is a future of Server Side Rendering.
+
+https://htmx.org/
+
+## Alpine.js a useful. But in this project i don't use it 
+
+https://alpinejs.dev/
+
+## JTE is a basically Better JSP 2.0
+
+https://github.com/casid/jte/
+
+## Spring-view-component is help me reusable ui component
+
+https://github.com/tschuehly/spring-view-component
+
+## TailwindCss and DaisyUi is a best CSS Framework for backend Developer
 
 https://tailwindcss.com/
 
 https://daisyui.com/
 
 
-https://github.com/casid/jte/
 
-https://github.com/tschuehly/spring-view-component
+## Try this dev stack
+
+It is very helpful for fullstack web development.
+
+especially if you are springboot Backend Developer.
+
+
+
+# Other Example
 
 https://brianlovin.com/hn/33218439#33221465
 
 https://github.com/wiverson/htmx-demo
 
-https://www.youtube.com/watch?v=DPAtQU-erM4

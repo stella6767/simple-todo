@@ -10,9 +10,9 @@ class UtilTest {
     fun jasyptTest() {
 
 
-        val gitHubSecret = "postgres"
-        val googleSecret = "1234"
-        val facebookSecret = "1234"
+        val gitHubSecret = "asd"
+        val googleSecret = "asdasd"
+        val facebookSecret = "asdasd"
 
 
         val encryptGithub = jasyptEncrypt(gitHubSecret)
